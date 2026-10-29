@@ -21,11 +21,14 @@ const allowedOrigins = (process.env.CLIENT_URL || "http://localhost:5173")
   .filter(Boolean);
 
 app.use(express.json({ limit: "10kb" }));
-app.use(
-  cors({
-    origin: allowedOrigins,
-  })
-);
+
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://my-portfolio-kappa-seven-67.vercel.app",
+    "https://my-portfolio-mufaddal6.vercel.app"
+  ]
+}));
 
 // Spam protection: max 5 contact submissions per IP per 15 minutes
 const contactLimiter = rateLimit({
