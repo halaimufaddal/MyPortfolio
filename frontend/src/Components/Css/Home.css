@@ -1,0 +1,380 @@
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.home {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 110px 7% 70px;
+  background: #050b14;
+  color: #f5f7fa;
+}
+
+/* Developer image on the right */
+
+.hero-visual {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  width: 70%;
+  height: 100%;
+
+  background-image:
+    linear-gradient(
+      to right,
+      #050b14 0%,
+      rgba(5, 11, 20, 0.96) 8%,
+      rgba(5, 11, 20, 0.75) 25%,
+      rgba(5, 11, 20, 0.18) 58%,
+      rgba(5, 11, 20, 0.08) 100%
+    ),
+    radial-gradient(circle at 72% 38%, rgba(0, 200, 255, 0.22), transparent 55%),
+    radial-gradient(circle at 92% 82%, rgba(120, 80, 255, 0.18), transparent 50%);
+
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+}
+
+/* =========================
+   INTRODUCTION
+========================= */
+
+.intro {
+  position: relative;
+  z-index: 1;
+  width: 60%;
+  max-width: 720px;
+  animation: introFadeIn 0.8s ease both;
+}
+
+.greeting {
+  color: #168bff;
+  font-size: 1.35rem;
+  font-weight: 500;
+  margin: 0 0 12px;
+}
+
+.intro h1 {
+  font-size: clamp(2.8rem, 5vw, 4.7rem);
+  font-weight: 750;
+  line-height: 1.1;
+  letter-spacing: -1.8px;
+  margin: 0 0 18px;
+}
+
+.intro h1 span {
+  color: #087cff;
+}
+
+.intro h3 {
+  color: #d6e1f0;
+  font-size: clamp(1.05rem, 1.8vw, 1.45rem);
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0 0 20px;
+}
+
+.intro h3 span {
+  color: #168bff;
+  margin: 0 5px;
+}
+
+.description {
+  max-width: 480px;
+  color: #aab7c8;
+  font-size: 1.08rem;
+  line-height: 1.8;
+  margin: 0 0 30px;
+}
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+
+.btns {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.primary-btn {
+  color: #ffffff;
+  background: #087cff;
+  border: 1px solid #087cff;
+  box-shadow: 0 5px 20px rgba(8, 124, 255, 0.15);
+}
+
+.primary-btn:hover {
+  background: #0064d8;
+  border-color: #0064d8;
+  transform: translateY(-3px);
+}
+
+.arrow {
+  display: inline-block;
+  font-size: 1.25rem;
+  transition: transform 0.25s ease;
+}
+
+.primary-btn:hover .arrow {
+  transform: translateX(4px);
+}
+
+.secondary-btn {
+  color: #f5f7fa;
+  background: rgba(5, 11, 20, 0.55);
+  border: 1px solid #52647c;
+}
+
+.secondary-btn:hover {
+  color: #55b8ff;
+  border-color: #168bff;
+  transform: translateY(-3px);
+}
+
+/* =========================
+   SOCIAL ICONS
+========================= */
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  color: #f5f7fa;
+  background: rgba(5, 11, 20, 0.72);
+  border: 1px solid #34445a;
+  border-radius: 12px;
+  font-size: 1.4rem;
+  text-decoration: none;
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.links a:hover {
+  color: #ffffff;
+  background: #087cff;
+  border-color: #087cff;
+  transform: translateY(-4px);
+}
+
+/* =========================
+   SCROLL INDICATOR
+========================= */
+
+.scroll-down {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 65px;
+  color: #91a0b5;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.scroll-down:hover {
+  color: #55b8ff;
+}
+
+.mouse {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 23px;
+  height: 39px;
+  border: 2px solid #52647c;
+  border-radius: 14px;
+}
+
+.mouse-dot {
+  position: absolute;
+  top: 7px;
+  width: 4px;
+  height: 7px;
+  background: #55b8ff;
+  border-radius: 5px;
+  animation: mouseScroll 1.4s infinite;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes introFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes mouseScroll {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+/* =========================
+   TABLET RESPONSIVENESS
+========================= */
+
+@media (max-width: 900px) {
+  .home {
+    min-height: 90vh;
+    padding: 100px 6% 60px;
+  }
+
+  .hero-visual {
+    width: 78%;
+    opacity: 0.8;
+    background-position: 62% center;
+  }
+
+  .intro {
+    width: 72%;
+  }
+
+  .intro h1 {
+    letter-spacing: -1px;
+  }
+
+  .scroll-down {
+    margin-top: 45px;
+  }
+}
+
+/* =========================
+   MOBILE RESPONSIVENESS
+========================= */
+
+@media (max-width: 600px) {
+  .home {
+    min-height: 100svh;
+    padding: 100px 6% 45px;
+    align-items: center;
+  }
+
+  .hero-visual {
+    width: 100%;
+    opacity: 0.45;
+    background-position: 67% center;
+
+    background-image:
+      linear-gradient(
+        to bottom,
+        rgba(5, 11, 20, 0.35),
+        rgba(5, 11, 20, 0.65)
+      ),
+      radial-gradient(circle at 70% 35%, rgba(0, 200, 255, 0.25), transparent 60%);
+  }
+
+  .intro {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .greeting {
+    font-size: 1.1rem;
+  }
+
+  .intro h1 {
+    font-size: clamp(2.5rem, 10vw, 3.5rem);
+    letter-spacing: -1px;
+  }
+
+  .intro h3 {
+    font-size: 1rem;
+  }
+
+  .description {
+    max-width: 100%;
+    font-size: 0.98rem;
+    line-height: 1.7;
+  }
+
+  .btns {
+    gap: 12px;
+  }
+
+  .btn {
+    padding: 12px 16px;
+    font-size: 0.92rem;
+  }
+
+  .links {
+    gap: 12px;
+  }
+
+  .links a {
+    width: 42px;
+    height: 42px;
+    font-size: 1.2rem;
+  }
+
+  .scroll-down {
+    margin-top: 45px;
+  }
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  .intro,
+  .mouse-dot {
+    animation: none;
+  }
+
+  .btn,
+  .links a,
+  .scroll-down {
+    transition: none;
+  }
+}
