@@ -4,7 +4,9 @@ import "../Css/Contact.css";
 // Backend address comes from the VITE_API_URL environment variable.
 // Local dev falls back to localhost; on your host set VITE_API_URL to the deployed backend URL.
 const API_BASE = (import.meta.env.VITE_API_URL || "http://localhost:5300").replace(/\/$/, "");
-const API_URL = `${API_BASE}/api/contact/userConnect`;
+const API_URL = `${
+  import.meta.env.VITE_API_URL || "http://localhost:5200"
+}/api/contact/userConnect`;
 
 function Contact() {
   // Store all form input values
